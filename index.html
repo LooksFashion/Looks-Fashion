@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Looks Fashion - Loja Feminina</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <script defer src="Admin-script.js"></script>
+  <script defer src="site-script.js"></script>
+  <script defer>
+    if (window.location.pathname.includes("admin.html")) {
+      const senha = prompt("Acesso restrito. Digite a senha do administrador:");
+      if (senha !== "admin123") {
+        alert("Acesso negado.");
+        window.location.href = "/index.html";
+      }
+    }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">Looks Fashion</div>
+    <nav>
+      <ul class="menu">
+        <li><a href="#" onclick="exibirProdutos('')">Todos</a></li>
+        <li><a href="#" onclick="exibirProdutos('vestidos')">Vestidos</a></li>
+        <li><a href="#" onclick="exibirProdutos('macacao')">Macacão</a></li>
+        <li><a href="#" onclick="exibirProdutos('conjuntos')">Conjuntos</a></li>
+        <li><a href="admin.html">Admin</a></li>
+      </ul>
+      <div id="icone-carrinho" onclick="toggleCarrinho()">🛒</div>
+      <div id="carrinho-container" class="carrinho-oculto">
+        <ul id="carrinho-dropdown"></ul>
+        <div class="finalizar-container">
+          <p id="total-carrinho"></p>
+          <a href="https://wa.me/5567992878774" target="_blank" class="botao-finalizar">Finalizar pelo WhatsApp</a>
+          <p class="observacao-frete">*O valor final pode variar conforme o frete.</p>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="lista-produtos"></section>
+  </main>
+
+  <footer class="footer">
+    <p>CNPJ: 58.370.471/0001-71</p>
+    <p>Endereço: Av. Presidente Vargas, N° 1170, Centro - Iguatemi/MS</p>
+  </footer>
+</body>
+</html>

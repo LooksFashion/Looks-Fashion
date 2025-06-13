@@ -1,0 +1,1 @@
+// Admin functions podem ser adicionadas aqui futuramente.
